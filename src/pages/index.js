@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { Fragment, useState, Component } from 'react';
 import HeaderLayout from "../pages/component/layout/headerlayout"
 import FooterLayout from "../pages/component/layout/footerlayout"
 import HomeBanner from "../pages/component/layout/homebanner"
@@ -107,23 +107,33 @@ const links = [
 ]
 
 // markup
-const IndexPage = () => {
-  return (
-    <main style={pageStyles}>
-      <HeaderLayout />
-      <HomeBanner />
-      <HomeSectionHeader />
-      <HomeBanner2 />
-      <HomeCatagory />
-      <HomeBanner3 />
-      <HomeEvents />
-      <HomeBanner4 />
-      <HomeTestimonial />
-      <HomeSubscribe />
-     
-       <FooterLayout />
-    </main>
-  )
-}
+class IndexPage extends Component {
 
-export default IndexPage
+  componentDidMount() {
+    localStorage.setItem('supportTelephone', '61383766284');
+    localStorage.setItem('supportEmail', 'support@mutoar.com');
+  };
+
+
+
+
+  render() {
+    return (
+      <main style={pageStyles} >
+        <HeaderLayout />
+        <HomeBanner />
+        <HomeSectionHeader />
+        <HomeBanner2 />
+        <HomeCatagory />
+        <HomeBanner3 />
+        <HomeEvents />
+        <HomeBanner4 />
+        <HomeTestimonial />
+        <HomeSubscribe />
+
+        <FooterLayout />
+      </main>
+    );
+  }
+}
+export default IndexPage;
